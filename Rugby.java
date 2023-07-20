@@ -6,8 +6,8 @@ public class Rugby {
         int minAge = 18;
         int maxAge = 40;
 
-        int[] teamFirstAges = RandomAges(teamSize, minAge, maxAge);
-        int[] teamSecondAges = RandomAges(teamSize, minAge, maxAge);
+        int[] teamFirstAges = randomAges(teamSize, minAge, maxAge);
+        int[] teamSecondAges = randomAges(teamSize, minAge, maxAge);
 
         System.out.println("Вік гравців команди 1: ");
         printAges(teamFirstAges);
@@ -15,11 +15,11 @@ public class Rugby {
         System.out.println("\nВік гравців команди 2: ");
         printAges(teamSecondAges);
 
-        System.out.println("\nСередній вік команди 1: " + AverageAge(teamFirstAges));
-        System.out.println("Середній вік команди 2: " + AverageAge(teamSecondAges));
+        System.out.println("\nСередній вік команди 1: " + averageAge(teamFirstAges));
+        System.out.println("Середній вік команди 2: " + averageAge(teamSecondAges));
     }
 
-    private static int[] RandomAges(int size, int minAge, int maxAge) {
+    private static int[] randomAges(int size, int minAge, int maxAge) {
         int[] ages = new int[size];
         for (int i = 0; i < size; i++) {
             ages[i] = minAge + (int) (Math.random() * (maxAge - minAge + 1));
@@ -33,7 +33,7 @@ public class Rugby {
         }
     }
 
-    private static double AverageAge(int[] ages) {
+    private static double averageAge(int[] ages) {
         int sum = 0;
         for (int age : ages) {
             sum += age;
